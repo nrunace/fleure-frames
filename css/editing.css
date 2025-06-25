@@ -1,0 +1,330 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap');
+
+/* DESIGN */
+*{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+  
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    margin: 0;
+    background-color: whitesmoke;
+    background-image: 
+        linear-gradient(to right, #fed9df 0.5px, transparent 1px),
+        linear-gradient(to bottom, #fed9df 0.5px, transparent 1px);
+    background-size: 20px 20px;
+    animation: fadeIn 2s forwards;
+    opacity: 0;
+    color:#cc4890;
+}
+
+@keyframes fadeIn {
+    to{
+        opacity: 1;
+    }
+}
+
+/* Customize Section Styles */
+.control-section {
+    margin-bottom: 20px;
+}
+
+.color-options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.custom-color input {
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.frame-option,
+.filter-btn,
+#continueBtn{
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover{
+    background-color: #ddd;
+}
+
+#continueBtn{
+    background-color: #f7e3e3;
+    color: #cc4890;
+    transition: all 0.3s ease;
+}
+
+#continueBtn:hover {
+    background-color: #f1d0d0;
+}
+
+.frame-option{
+    margin: 5px;
+}
+
+.frame-option[data-frame-id$="-pink"] {
+  background-color: #f076b9; /* pink */
+  color: white;
+}
+
+.frame-option[data-frame-id$="-green"] {
+  background-color: #a1bb3b; /* green */
+  color: white;
+}
+
+.frame-option[data-frame-id$="-pink"]:hover {
+  background-color: #cc4890;
+}
+
+.frame-option[data-frame-id$="-green"]:hover {
+  background-color: #345f38;
+}
+
+/* Ensure canvas fits the frame container */
+.preview-flex-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 0; 
+    padding-bottom: 0;
+}
+
+/* left side - photo strip container */
+.photo-strip-container {
+    position: relative;
+    width: 400px;
+    aspect-ratio: 2 / 3;
+    zoom: 0.7;    
+    transform-origin: top center;
+}
+
+.strip-description {
+    margin-bottom: 20px;
+}
+
+/* right and left side panel */
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1; 
+    max-width: 400px;
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.customize,
+.filter-prompt,
+.controls {
+    text-align: center;
+}
+
+.customize {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.customize h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.photo-strip,
+.frame-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* Remove transform from photo-strip & frame-image */
+.photo-strip {
+    z-index: 1;
+}
+
+.frame-image {
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.0001);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.photo-strip.f4-layout img {
+    width: 45%;
+    max-height: 30%;
+}
+
+.photo-preview {
+    position: relative;
+}
+
+/* Responsive for tablets and smaller laptops */
+@media (max-width: 1024px) {
+    body {
+        padding: 0 0.5rem;
+    }
+
+    .preview-flex-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .right-panel {
+        max-width: 100%;
+        width: 100%;
+        flex: none;
+        gap: 15px;
+        padding: 0 1rem;
+    }
+
+    .left-panel {
+        gap: 8px;
+    }
+
+    .photo-strip-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        aspect-ratio: 2 / 3;
+        zoom: 0.6; /* still applied here if you want */
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #photoStrip {
+        width: 500px;
+        height: auto;
+        transform: scale(1.3);
+        transform-origin: center center;
+    }
+
+    .color-options,
+    .filters {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .frame-option,
+    .filter-btn,
+    #continueBtn {
+        font-size: 0.9rem;
+        padding: 8px;
+        margin: 4px;
+    }
+
+    .custom-color input {
+        padding: 8px;
+        margin-left: 8px;
+        max-width: 150px;
+    }
+
+    .customize h3 {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Responsive for mobile phones */
+@media (max-width: 480px) {
+    body {
+        padding: 0 0.5rem;
+    }
+
+    .preview-flex-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .right-panel {
+        max-width: 100%;
+        width: 100%;
+        flex: none;
+        gap: 12px;
+        padding: 0 0.5rem;
+    }
+
+    .left-panel {
+        gap: 6px;
+    }
+
+    .photo-strip-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        aspect-ratio: 2 / 3;
+        zoom: 0.5;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #photoStrip {
+        width: 500px;
+        height: auto;
+        transform: scale(1.25);
+        transform-origin: center center;
+    }
+
+    .color-options,
+    .filters {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .frame-option,
+    .filter-btn,
+    #continueBtn {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+        margin: 3px;
+    }
+
+    .custom-color input {
+        padding: 6px;
+        margin-left: 6px;
+        max-width: 120px;
+    }
+
+    .customize h3 {
+        margin-bottom: 12px;
+        font-size: 1rem;
+    }
+}

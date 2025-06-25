@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleuré Frames</title>
+    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="shortcut icon" href="images/fleure-frames-logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar" id="myTopnav">
+        <input type="checkbox" id="check">
+
+        <label for="check" class="icon">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+
+        <img src="images/fleure-frames-logo-green.png" alt="Fleuré Frames Logo" class="logo" id="navbar-logo" />
+
+        <ul class="nav-links" id="navLinks">
+            <li class="home-nav"><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+    <div class="main-content">
+        <div class="frame-selection">
+            <h1>Choose your frame</h1>
+            <p>Select a layout for your photo session. You can choose from different styles and poses.</p>
+            <div class="frame-options">
+                <div class="frame-option" id="f1-pink" data-poses="4" data-layout="f1" data-frame-color="pink">
+                    <img src="images/frame-1.png" alt="4 poses" class="one-col">
+                    <div class="option-description">
+                        <h3>Frame 1</h3>
+                        <p>4 poses</p>
+                    </div>
+                </div>
+
+                <div class="frame-option" id="f2-pink" data-poses="3" data-layout="f2" data-frame-color="pink">
+                    <img src="images/frame-2.png" alt="3 poses" class="one-col">
+                    <div class="option-description">
+                        <h3>Frame 2</h3>
+                        <p>3 poses</p>
+                    </div>
+                </div>
+
+                <div class="frame-option" id="f3-pink" data-poses="2" data-layout="f3" data-frame-color="pink">
+                    <img src="images/frame-3.png" alt="2 poses" class="one-col">
+                    <div class="option-description">
+                        <h3>Frame 3</h3>
+                        <p>2 poses</p>
+                    </div>
+                </div>
+
+                <div class="frame-option" id="f4-pink" data-poses="6" data-layout="f4" data-frame-color="pink">
+                    <img src="images/frame-4.png" alt="6 poses" class="two-col">
+                    <div class="option-description">
+                        <h3>Frame 4</h3>
+                        <p>6 poses</p>
+                    </div>
+                </div>
+            </div>
+
+            <button id="continueBtn" disabled>Continue</button>
+        </div>
+    </div>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Balmonte-Quinto</span>
+        </div>
+    </footer>
+    <script src="javascript/navbar.js"></script>
+    <script src="javascript/frame.js"></script>
+</body>
+</html>

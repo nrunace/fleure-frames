@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Fleuré Frames</title>
+    <link rel="stylesheet" href="css/camera.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="shortcut icon" href="images/fleure-frames-logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar" id="myTopnav">
+        <input type="checkbox" id="check">
+
+        <label for="check" class="icon">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+
+        <img src="images/fleure-frames-logo-green.png" alt="Fleuré Frames Logo" class="logo" id="navbar-logo" />
+
+        <ul class="nav-links" id="navLinks">
+            <li class="home-nav"><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+    <div class="main-content">
+        <div class="photobooth">
+            <div class="frame-info">
+                <div id="countdown">Press capture to start</div>
+            </div>
+            <div class="photo-container-wrapper">
+                <div class="photo-container">
+                    <!-- Camera feed -->
+                    <div class="camera-container">
+                        <video id="video" autoplay playsinline disablepictureinpicture disableremoteplayback class="video-feed"></video>
+                        <canvas id="canvas" class="hidden"></canvas>
+                    </div>
+                    
+                    <!-- Vertical photo strip -->
+                    <div id="preview" class="photo-strip"></div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="captureBtn">Capture</button>
+                <button id="continueBtn" disabled>Continue</button>
+            </div>
+        </div>
+    </div>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Balmonte-Quinto</span>
+        </div>
+    </footer>
+
+    <script src="javascript/navbar.js"></script>
+    <script src="javascript/camera.js"></script>
+</body>
+</html>

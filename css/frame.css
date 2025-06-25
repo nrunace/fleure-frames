@@ -1,0 +1,197 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap');
+
+/* DESIGN */
+*{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+  
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    margin: 0;
+    background-color: whitesmoke;
+    background-image: 
+        linear-gradient(to right, #fed9df 0.5px, transparent 1px),
+        linear-gradient(to bottom, #fed9df 0.5px, transparent 1px);
+    background-size: 20px 20px;
+    animation: fadeIn 2s forwards;
+    opacity: 0;
+    color:#cc4890;
+}
+
+@keyframes fadeIn {
+    to{
+        opacity: 1;
+    }
+}
+
+.main-content {
+    padding: 20px;
+}
+
+/* Frame selection */
+.frame-selection {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.frame-selection h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.frame-selection p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Frame options container */
+.frame-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.frame-option {
+    background-color: white;
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    width: calc(25% - 20px); 
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s; 
+    cursor: pointer;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+}
+
+.frame-option .one-col {
+    width: 45%;
+}
+
+.frame-option .two-col {
+    width: 65%; 
+}
+
+.frame-option img{
+    display: block;
+    height: auto;
+    flex-grow: 1; 
+    object-fit: contain; 
+    margin: 0 auto;
+}
+
+.frame-option.selected{
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    transform: scale(1.03); 
+}
+
+/* Option description */
+.option-description {
+    padding: 10px;
+    text-align: center;
+}
+
+.option-description h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #345f38;
+}
+
+.option-description p {
+    font-size: 15px;
+    margin: 2.5px 0 0;
+}
+
+/* Hover effect */
+.frame-option:hover {
+    transform: scale(1.05); 
+}
+
+/* Button styles */
+#continueBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #a1bb3b; 
+    color: white; 
+    border: none;
+    border-radius: 20px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+#continueBtn:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed; 
+}
+
+#continueBtn:hover:not(:disabled) {
+    background-color: #73891d; /* Darker green on hover */
+}
+
+/* Mobile view adjustments */
+@media (max-width: 1024px) {
+    .frame-option {
+        width: calc(50% - 20px);
+        aspect-ratio: 1 / 1; /* keep square shape */
+        padding: 10px;
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .frame-option .one-col {
+        width: 50%;
+    }
+
+    .frame-option .two-col {
+        width: 70%;
+    }
+
+    .frame-option img {
+        max-height: 70%;
+        object-fit: contain;
+        margin: 10px auto 0;
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .frame-option {
+        width: 80%;
+        padding: 8px;
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .frame-option .one-col {
+        width: 50%;
+    }
+
+    .frame-option .two-col {
+        width: 60%;
+    }
+
+    .frame-option img {
+        max-height: 65%;
+    }
+}

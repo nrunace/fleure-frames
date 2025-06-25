@@ -1,0 +1,241 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap');
+
+/* DESIGN */
+* {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+  
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    margin: 0;
+    background-color: whitesmoke;
+    background-image: 
+        linear-gradient(to right, #fed9df 0.5px, transparent 1px),
+        linear-gradient(to bottom, #fed9df 0.5px, transparent 1px);
+    background-size: 20px 20px;
+    animation: fadeIn 2s forwards;
+    opacity: 0;
+    color:#cc4890;
+}
+
+@keyframes fadeIn {
+    to{
+        opacity: 1;
+    }
+}
+  
+h1, p {
+    margin: 0;
+}
+
+main {
+    flex: 1;
+}
+  
+.home {
+    background-color: rgba(0, 0, 0, 0.0001);
+    height: calc(100vh - 12rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+  
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    gap: 4rem;
+}
+  
+.home-data {
+    flex: 1;
+    font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+}
+  
+.home-title {
+    font-size: clamp(2rem, 6vw, 5rem);
+    line-height: 0.8;
+    margin-bottom: 1rem;
+    font-family: 'Shrikhand', 'Times New Roman', Times, serif;
+    color: #a1bb3b;
+}
+  
+.home-welcome{
+    margin-top: 0rem;
+}
+
+.home-welcome,
+.home-description {
+    margin-bottom: 2rem;
+}
+  
+.home-button {
+    display: inline-block;
+    background-color:  #f076b9;
+    color: white;
+    padding: 1.125rem 3rem;
+    border-radius: 5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+  
+.home-button:hover {
+    background-color: #cc4890;
+}
+  
+.home-img {
+    flex: 1;
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+  
+.home-img img {
+    position: absolute;
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+    transition: z-index 0.3s, transform 0.3s;
+}
+  
+/* Image layering logic */
+.img-1 {
+    z-index: 2;
+    top: -7rem;
+    left: 7rem;
+}
+
+.img-2 {
+    z-index: 1;
+    top: -3rem;
+    left: 14.5rem;
+}
+  
+.img-1:hover,
+.img-2:hover{
+    z-index: 3;
+    animation: smooth-wiggle 1.4s ease-in-out infinite;  
+}
+  
+@keyframes smooth-wiggle {
+    0% { transform: rotate(2deg) translateX(0); }
+    25% { transform: rotate(3deg) translateX(1px); }
+    50% { transform: rotate(1deg) translateX(-2px); }
+    75% { transform: rotate(3deg) translateX(1px); }
+    100% { transform: rotate(2deg) translateX(0); }
+}
+
+/* Tablets and smaller screens: horizontal stacking with flex */
+@media (max-width: 1024px) {
+    .home {
+        padding-top: 10px;
+        height: auto; /* Let content grow naturally */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+  
+    .home-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: auto;
+        position: relative;
+      }
+
+    .home-img img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(var(--base-x));
+        transition: transform 0.3s ease;
+    }
+  
+    .img-1 {
+        top: 0;
+        --base-x: -70%;
+    }
+  
+    .img-2 {
+        top: 2rem;
+        --base-x: calc(-50% + 1.5rem);    
+    }
+
+    .img-1:hover,
+    .img-2:hover {
+        z-index: 3;
+        animation: smooth-wiggle 1.4s ease-in-out infinite;
+    }
+
+    @keyframes smooth-wiggle {
+        0% {
+            transform: translateX(var(--base-x)) rotate(2deg);
+        }
+        25% {
+            transform: translateX(var(--base-x)) rotate(3deg);
+        }
+        50% {
+            transform: translateX(var(--base-x)) rotate(1deg);
+        }
+        75% {
+            transform: translateX(var(--base-x)) rotate(3deg);
+        }
+        100% {
+            transform: translateX(var(--base-x)) rotate(2deg);
+        }
+    }
+    
+    .home-title {
+        font-size: 3rem;
+    }
+  
+    .home-button {
+        padding: 1rem 1.5rem;
+    }
+  
+    .logo {
+        height: 70px;
+    }
+}
+/* Small phones: same horizontal stack but smaller */
+@media (max-width: 480px) {
+    .home-img {
+        max-width: 100%;
+    }
+
+    .home-title {
+        font-size: 2rem;
+    }
+
+    .home-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        height: 55px;
+    }
+}
+  
+  

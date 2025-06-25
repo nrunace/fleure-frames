@@ -1,0 +1,370 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap');
+
+/* RESET + BASE */
+* {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+  
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    margin: 0;
+    background-color: whitesmoke;
+    background-image: 
+        linear-gradient(to right, #fed9df 0.5px, transparent 1px),
+        linear-gradient(to bottom, #fed9df 0.5px, transparent 1px);
+    background-size: 20px 20px;
+    animation: fadeIn 2s forwards;
+    opacity: 0;
+    color:#cc4890;
+}
+
+/* FADE-IN ANIMATION */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* MAIN CONTENT WRAPPER */
+.main-content {
+    padding: 30px;
+    padding-top: 0;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.photo-preview {
+    position: relative;
+}
+
+.preview-flex-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 0; 
+    padding-bottom: 0;
+}
+
+/* LEFT PANEL */
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 280px;
+}
+
+.strip-description h3 {
+    color: #cc4890;
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bolder;
+}
+
+/* PHOTO STRIP STYLES */
+.photo-strip-container {
+    width: 400px;
+    aspect-ratio: 2 / 3;
+    position: relative;
+    zoom: 0.7;    
+    transform-origin: top center;
+}
+
+.photo-strip{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.photo-strip.f4-layout img {
+    width: 45%;
+    max-height: 30%;
+}
+
+#photoStrip img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    flex: 1;
+    z-index: 0;
+    zoom: 1.2;
+}
+
+/* FRAME IMAGE */
+.frame-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    z-index: 2;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* RIGHT PANEL */
+.customize{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.customize h3{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+#mode {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.newPics,
+#newPics {
+  margin: 10px;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1; 
+    width: 400px;
+}
+
+/* BUTTON STYLES */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0 auto;
+    width: 300px;
+}
+
+#newPhotos{
+    width: 300px;
+    margin: 0 auto;
+}
+
+button {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 20px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: 600;
+}
+
+#downloadJPG,
+.downloadGIF,
+#newPhotos {
+    width: 100%;
+    max-width: 300px;
+}
+
+#downloadJPG,
+.downloadGIF{
+    background-color: #f076b9;
+}
+
+#downloadJPG:hover,
+.downloadGIF:hover{
+    background-color: #cc4890;
+}
+
+#newPhotos,
+#downloadGIF{
+    background-color: #a1bb3b;
+    color: #345f38;
+    border: none;
+}
+
+#newPhotos:hover,
+#downloadGIF:hover{
+    background-color: #345f38;
+    color: white;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+#gifPreviewVideo{
+    width: auto;
+    height: 380px;
+    margin: 0 auto;
+}
+
+.modal-content button{
+    width: auto;
+    border-radius: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    body {
+        padding: 0 0.5rem;
+    }
+
+    .preview-flex-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .right-panel {
+        max-width: 100%;
+        width: 100%;
+        flex: none;
+        gap: 15px;
+        padding: 0 1rem;
+    }
+
+    .left-panel {
+        gap: 8px;
+    }
+
+    .photo-strip-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        aspect-ratio: 2 / 3;
+        zoom: 0.6;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #photoStrip {
+        width: 500px;
+        height: auto;
+        transform: scale(1.25);
+        transform-origin: center center;
+    }
+
+    .customize h3 {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+    }
+
+    .action-buttons,
+    #newPhotos {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #downloadJPG,
+    .downloadGIF,
+    #newPhotos {
+        font-size: 14px;
+        padding: 10px;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Responsive for mobile phones */
+@media (max-width: 480px) {
+    body {
+        padding: 0 0.5rem;
+    }
+
+    .main-content {
+        padding: 20px 10px;
+    }
+
+    .preview-flex-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .left-panel {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .strip-description h3 {
+        font-size: 1.2rem;
+        padding: 0 10px;
+    }
+
+    .photo-strip-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        aspect-ratio: 2 / 3;
+        zoom: 0.5;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #photoStrip {
+        width: 500px;
+        height: auto;
+        transform: scale(1.25);
+        transform-origin: center center;
+    }
+
+    .right-panel {
+        width: 100%;
+        padding: 0 0.5rem;
+        max-width: 100%;
+        flex: none;
+        gap: 10px;
+    }
+
+    .action-buttons,
+    #newPhotos {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #downloadJPG,
+    .downloadGIF,
+    #newPhotos {
+        font-size: 13px;
+        padding: 10px 12px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #gifPreviewVideo {
+        width: 100%;
+        height: auto;
+    }
+
+    footer {
+        text-align: center;
+    }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleuré Frames</title>
+    <link rel="stylesheet" href="css/editing.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="shortcut icon" href="images/fleure-frames-logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar" id="myTopnav">
+        <input type="checkbox" id="check">
+
+        <label for="check" class="icon">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+
+        <img src="images/fleure-frames-logo-green.png" alt="Fleuré Frames Logo" class="logo" id="navbar-logo" />
+
+        <ul class="nav-links" id="navLinks">
+            <li class="home-nav"><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+    <div class="main-content">
+        <div class="photo-preview">
+            <div class="preview-flex-container">
+                <div class="left-panel">
+                     <div class="strip-description">
+                        <h2>Photo Strip Preview</h2>
+                        <div class="frame-info">
+                            <p id="layout-no">Layout: Layout _ ( # photos)</p>
+                        </div>
+                    </div>
+
+                    <div class="photo-strip-container">
+                        <div class="photo-strip" id="photoStrip">
+                            <!-- Dito nakalagay yung img -->
+                        </div>
+                        <img id="frameImage" class="frame-image" src="" alt="Photo Frame" />
+                    </div>         
+                </div>
+                
+                <div class="right-panel">
+                    <div class="customize">
+                        <h3>Customize your Photo Strip!</h3>
+                        <div class="control-section">
+                            <p class="section-title">Choose Frame Layout & Color:</p>
+                            <div class="color-options">
+                                <!-- Frame 1 (f1) buttons -->
+                                <div class="frame-options-group" data-frame="f1">
+                                    <button class="frame-option" data-frame-id="f1-pink">Pink</button>
+                                    <button class="frame-option" data-frame-id="f1-green">Green</button>
+                                </div>
+
+                                <!-- Frame 2 (f2) buttons -->
+                                <div class="frame-options-group" data-frame="f2">
+                                    <button class="frame-option" data-frame-id="f2-pink">Pink</button>
+                                    <button class="frame-option" data-frame-id="f2-green">Green</button>
+                                </div>
+
+                                <!-- Frame 3 (f3) buttons -->
+                                <div class="frame-options-group" data-frame="f3">
+                                    <button class="frame-option" data-frame-id="f3-pink">Pink</button>
+                                    <button class="frame-option" data-frame-id="f3-green">Green</button>
+                                </div>
+
+                                <!-- Frame 4 (f4) buttons -->
+                                <div class="frame-options-group" data-frame="f4">
+                                    <button class="frame-option" data-frame-id="f4-pink">Pink</button>
+                                    <button class="frame-option" data-frame-id="f4-green">Green</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-prompt">
+                        <p>Choose a filter for your photos!</p>
+                        <div class="filters">
+                            <button class="filter-btn" data-filter="none">No Filter</button>
+                            <button class="filter-btn" data-filter="bw">B&W</button>
+                            <button class="filter-btn" data-filter="vintage">Vintage</button>
+                            <button class="filter-btn" data-filter="soft">Soft</button>
+                        </div>
+                    </div>
+
+                    <div class="controls">
+                        <button id="continueBtn">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Balmonte-Quinto</span>
+        </div>
+    </footer>
+
+    <script src="javascript/navbar.js"></script>
+    <script src="javascript/editing.js"></script>
+</body>
+</html>
